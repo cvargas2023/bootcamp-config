@@ -12,7 +12,7 @@ action: upsert
 schedule:
     interval: 0 * * * *
     isPaused: false
-dataSetExternalId:
+dataSetExternalId: src:002:opcua:ds
 # Specify credentials separately like this:
 # authentication:
 #   read:

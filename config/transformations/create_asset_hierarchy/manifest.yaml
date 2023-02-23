@@ -10,7 +10,7 @@ destination:
 ignoreNullFields: true
 shared: true
 action: update
-dataSetExternalId:
+dataSetExternalId: src:002:opcua:ds
 # Specify credentials separately like this:
 # authentication:
 #   read:
