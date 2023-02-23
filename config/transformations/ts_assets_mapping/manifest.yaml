@@ -1,15 +1,17 @@
 ---
 # Manifest file downloaded from fusion
-externalId: tr-ts_assets_mapping
-name: ts_assets_mapping
+externalId: tr-create_asset_hierarchy
+name: create_asset_hierarchy
 query:
     file: transformation.sql
-
 destination:
-    type: timeseries
+    type: asset_hierarchy
 ignoreNullFields: true
 shared: true
-action: update
+action: upsert
+schedule:
+    interval: 0 * * * *
+    isPaused: false
 dataSetExternalId: all
 # Specify credentials separately like this:
 # authentication:
@@ -34,11 +36,13 @@ dataSetExternalId: all
 #     # Optional: If idP requires providing the audience
 #     audience: ${WRITE_CDF_AUDIENCE}
 # Or together like this:
-authentication:
-    clientId: ${COGNITE_CLIENT_ID}
-    clientSecret: ${COGNITE_CLIENT_SECRET}
-    tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
-  # Optional: If idP requires providing the scopes
-    cdfProjectName: ${CDF_PROJECT_NAME}
-    scopes:
-        - https://westeurope-1.cognitedata.com/.default
+# authentication:
+#   clientId: ${CLIENT_ID}
+#   clientSecret: ${CLIENT_SECRET}
+#   tokenUrl: ${TOKEN_URL}
+#   # Optional: If idP requires providing the scopes
+#   cdfProjectName: ${CDF_PROJECT_NAME}
+#   scopes:
+#    - ${SCOPES}
+#   # Optional: If idP requires providing the audience
+#   audience: ${AUDIENCE}
