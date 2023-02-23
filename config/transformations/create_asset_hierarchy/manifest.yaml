@@ -10,7 +10,7 @@ destination:
 ignoreNullFields: true
 shared: true
 action: update
-dataSetExternalId: all
+dataSetExternalId:
 # Specify credentials separately like this:
 # authentication:
 #   read:
